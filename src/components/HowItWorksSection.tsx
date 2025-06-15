@@ -35,7 +35,7 @@ const HowItWorksSection = () => {
   ];
 
   return (
-    <section id="how-it-works" className="py-24 px-6 bg-background">
+    <section id="how-it-works" className="py-24 px-6 bg-white">
       <div className="max-w-6xl mx-auto">
         <div 
           ref={titleRef}
@@ -45,7 +45,7 @@ const HowItWorksSection = () => {
               : 'opacity-0 translate-y-10'
           }`}
         >
-          <h2 className="font-helvetica text-4xl md:text-6xl font-bold mb-6 text-foreground">
+          <h2 className="font-helvetica text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-purple-900 to-white bg-clip-text text-transparent">
             How It Works (Straight Talk)
           </h2>
         </div>
@@ -64,20 +64,20 @@ const HowItWorksSection = () => {
               }`}
               style={{ transitionDelay: stepsVisible ? `${index * 150}ms` : '0ms' }}
             >
-              <Card className="bg-card/80 backdrop-blur-sm border-border hover:border-primary/50 transition-all duration-300 group text-center h-full hover:scale-105 hover:shadow-2xl hover:shadow-primary/10">
+              <Card className="bg-white border-gray-200 hover:border-primary/50 transition-all duration-300 group text-center h-full hover:scale-105 hover:shadow-2xl hover:shadow-primary/10 shadow-md">
                 <CardContent className="p-8">
-                  <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center text-2xl font-bold text-primary-foreground font-helvetica shadow-lg group-hover:animate-pulse">
+                  <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-primary to-purple-600 rounded-full flex items-center justify-center text-2xl font-bold text-white font-helvetica shadow-lg group-hover:animate-pulse">
                     {step.number}
                   </div>
 
-                  <div className="w-20 h-20 mx-auto mb-6 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
+                  <div className="w-20 h-20 mx-auto mb-6 bg-purple-50 rounded-full flex items-center justify-center group-hover:bg-purple-100 transition-colors duration-300">
                     <step.icon className="h-10 w-10 text-primary" />
                   </div>
 
-                  <h3 className="font-helvetica text-xl font-semibold mb-4 text-foreground">
+                  <h3 className="font-helvetica text-xl font-semibold mb-4 text-gray-900">
                     {step.title}
                   </h3>
-                  <p className="text-muted-foreground font-helvetica leading-relaxed">
+                  <p className="text-gray-600 font-helvetica leading-relaxed">
                     {step.description}
                   </p>
                 </CardContent>
