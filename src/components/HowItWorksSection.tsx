@@ -1,8 +1,12 @@
 
 import { Card, CardContent } from "@/components/ui/card";
 import { Wallet, Music, Share, Trophy } from "lucide-react";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 const HowItWorksSection = () => {
+  const { ref: titleRef, isVisible: titleVisible } = useScrollAnimation(0.1, 0);
+  const { ref: stepsRef, isVisible: stepsVisible } = useScrollAnimation(0.1, 200);
+
   const steps = [
     {
       number: "01",
@@ -33,28 +37,43 @@ const HowItWorksSection = () => {
   return (
     <section id="how-it-works" className="py-24 px-6 bg-background">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-16">
+        <div 
+          ref={titleRef}
+          className={`text-center mb-16 transition-all duration-1000 transform ${
+            titleVisible 
+              ? 'opacity-100 translate-y-0' 
+              : 'opacity-0 translate-y-10'
+          }`}
+        >
           <h2 className="font-helvetica text-4xl md:text-6xl font-bold mb-6 text-foreground">
             How It Works (Straight Talk)
           </h2>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div 
+          ref={stepsRef}
+          className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+        >
           {steps.map((step, index) => (
-            <div key={index} className="relative z-10">
-              <Card className="bg-card/80 backdrop-blur-sm border-border hover:border-primary/50 transition-all duration-300 group text-center h-full">
+            <div 
+              key={index} 
+              className={`relative z-10 transition-all duration-700 transform ${
+                stepsVisible 
+                  ? 'opacity-100 translate-y-0' 
+                  : 'opacity-0 translate-y-20'
+              }`}
+              style={{ transitionDelay: stepsVisible ? `${index * 150}ms` : '0ms' }}
+            >
+              <Card className="bg-card/80 backdrop-blur-sm border-border hover:border-primary/50 transition-all duration-300 group text-center h-full hover:scale-105 hover:shadow-2xl hover:shadow-primary/10">
                 <CardContent className="p-8">
-                  {/* Step Number */}
-                  <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center text-2xl font-bold text-primary-foreground font-helvetica shadow-lg">
+                  <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center text-2xl font-bold text-primary-foreground font-helvetica shadow-lg group-hover:animate-pulse">
                     {step.number}
                   </div>
 
-                  {/* Icon */}
                   <div className="w-20 h-20 mx-auto mb-6 bg-primary/10 rounded-full flex items-center justify-center group-hover:bg-primary/20 transition-colors duration-300">
                     <step.icon className="h-10 w-10 text-primary" />
                   </div>
 
-                  {/* Content */}
                   <h3 className="font-helvetica text-xl font-semibold mb-4 text-foreground">
                     {step.title}
                   </h3>
