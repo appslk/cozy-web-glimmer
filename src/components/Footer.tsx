@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Twitter, MessageSquare, Instagram, Youtube } from "lucide-react";
@@ -32,12 +33,28 @@ const Footer = () => {
   return (
     <footer className="bg-card/50 backdrop-blur-sm border-t border-border">
       <div className="max-w-6xl mx-auto px-6 py-16">
+        {/* Musecoinx Tagline */}
+        <div className="text-center mb-12">
+          <h3 className="font-helvetica text-3xl font-bold text-foreground mb-4">
+            Musecoinx = Music + Ownership + Vibes
+          </h3>
+          <p className="text-xl text-muted-foreground font-helvetica mb-6">
+            Part Spotify, part StockX, part Web3 —
+            Built for streamers, believers, and legends in the making.
+          </p>
+          <p className="text-2xl font-semibold text-primary font-helvetica">
+            You ready?
+          </p>
+        </div>
+
+        <Separator className="mb-12" />
+
         {/* Main Footer Content */}
         <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-8 mb-12">
           {/* Brand Section */}
           <div className="lg:col-span-2">
             <h3 className="font-helvetica text-2xl font-bold text-foreground mb-4">
-              Music<span className="text-primary">Web3</span>
+              Music<span className="text-primary">coinx</span>
             </h3>
             <p className="text-muted-foreground font-helvetica mb-6 max-w-sm">
               The future of music ownership. Discover, collect, and trade music NFTs 
@@ -89,7 +106,7 @@ const Footer = () => {
         {/* Bottom Footer */}
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <div className="text-muted-foreground font-helvetica text-sm">
-            © 2024 MusicWeb3. All rights reserved.
+            © 2024 Musecoinx. All rights reserved.
           </div>
           
           <div className="flex items-center space-x-6 text-sm">

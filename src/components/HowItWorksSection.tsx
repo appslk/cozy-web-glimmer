@@ -1,48 +1,48 @@
+
 import { Card, CardContent } from "@/components/ui/card";
-import { Wallet, Music, Trophy, ArrowRight } from "lucide-react";
+import { Wallet, Music, Share, Trophy } from "lucide-react";
 
 const HowItWorksSection = () => {
   const steps = [
     {
       number: "01",
-      icon: Wallet,
-      title: "Connect Your Wallet",
-      description: "Link your Web3 wallet to access the platform and start your music NFT journey."
+      icon: Music,
+      title: "Artists mint original tracks as NFTs",
+      description: "These are limited-edition digital assets backed by real royalty rights."
     },
     {
       number: "02", 
-      icon: Music,
-      title: "Mint Music NFTs",
-      description: "Discover exclusive tracks and mint your favorite music as unique digital collectibles."
+      icon: Wallet,
+      title: "Fans and collectors buy song shares",
+      description: "You're not just listening — you're co-investing in the artist's journey."
     },
     {
       number: "03",
+      icon: Share,
+      title: "Share it, stream it, hype it",
+      description: "The more traction it gets, the more revenue it earns. You benefit too."
+    },
+    {
+      number: "04",
       icon: Trophy,
-      title: "Earn Rewards",
-      description: "Participate in the ecosystem and earn rewards through staking, trading, and community engagement."
+      title: "Earn when it gets played",
+      description: "If the song earns royalties (Spotify, YouTube, etc.), your share hits your wallet. No middlemen."
     }
   ];
 
   return (
-    <section className="py-24 px-6 bg-background">
+    <section id="how-it-works" className="py-24 px-6 bg-background">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="font-helvetica text-4xl md:text-6xl font-bold mb-6 text-foreground">
-            How It Works
+            How It Works (Straight Talk)
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto font-helvetica">
-            Get started with music NFTs in three simple steps. 
-            Join thousands of collectors and artists already on the platform.
-          </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8 relative">
-          {/* Connection Lines */}
-          <div className="hidden md:block absolute top-1/2 left-1/3 right-1/3 h-0.5 bg-gradient-to-r from-primary via-accent to-secondary transform -translate-y-1/2 z-0"></div>
-          
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {steps.map((step, index) => (
             <div key={index} className="relative z-10">
-              <Card className="bg-card/80 backdrop-blur-sm border-border hover:border-primary/50 transition-all duration-300 group text-center">
+              <Card className="bg-card/80 backdrop-blur-sm border-border hover:border-primary/50 transition-all duration-300 group text-center h-full">
                 <CardContent className="p-8">
                   {/* Step Number */}
                   <div className="w-16 h-16 mx-auto mb-6 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center text-2xl font-bold text-primary-foreground font-helvetica shadow-lg">
@@ -55,31 +55,16 @@ const HowItWorksSection = () => {
                   </div>
 
                   {/* Content */}
-                  <h3 className="font-helvetica text-2xl font-semibold mb-4 text-foreground">
+                  <h3 className="font-helvetica text-xl font-semibold mb-4 text-foreground">
                     {step.title}
                   </h3>
                   <p className="text-muted-foreground font-helvetica leading-relaxed">
                     {step.description}
                   </p>
-
-                  {/* Arrow (except for last step) */}
-                  {index < steps.length - 1 && (
-                    <div className="hidden md:block absolute top-1/2 -right-6 transform -translate-y-1/2 text-primary">
-                      <ArrowRight className="h-6 w-6" />
-                    </div>
-                  )}
                 </CardContent>
               </Card>
             </div>
           ))}
-        </div>
-
-        {/* Call to Action */}
-        <div className="text-center mt-16">
-          <div className="inline-flex items-center space-x-2 text-muted-foreground mb-4">
-            <div className="w-2 h-2 bg-primary rounded-full animate-ping"></div>
-            <span className="font-helvetica">Ready to start your journey?</span>
-          </div>
         </div>
       </div>
     </section>

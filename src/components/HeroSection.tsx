@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { Wallet, Play } from "lucide-react";
 
@@ -16,15 +17,20 @@ const HeroSection = () => {
 
       <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
         <h1 className="font-helvetica text-6xl md:text-8xl font-bold mb-6 text-foreground">
-          The Future of
-          <span className="block bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-            Music Ownership
-          </span>
+          Musecoinx
         </h1>
         
-        <p className="text-xl md:text-2xl text-muted-foreground mb-12 max-w-2xl mx-auto font-helvetica">
-          Discover, mint, and trade music NFTs on the first decentralized platform 
-          for musicians and collectors.
+        <h2 className="font-helvetica text-3xl md:text-4xl font-semibold mb-6 text-primary">
+          Wanna Own the Next Ed Sheeran Track?
+        </h2>
+        
+        <p className="text-xl md:text-2xl text-muted-foreground mb-8 font-helvetica">
+          Why just stream music when you can own a piece of it?
+        </p>
+
+        <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-3xl mx-auto font-helvetica">
+          Wish you'd invested in Ed Sheeran when he was busking? Or Billie Eilish pre-Grammys?
+          Now you can — before the world catches on. Welcome to Musecoinx.
         </p>
 
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
